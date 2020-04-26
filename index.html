@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 
 <style>
 	body {
@@ -88,7 +88,7 @@
 		margin: 0 100px;
 	}
   
-  .introduction {
+  .Introduction {
     top: 150px;
     position: relative;
   }
@@ -189,7 +189,7 @@
 		<div class="right">
 			<a class="active" href="#Gallery">Gallery</a>
 			<a class="active" href="#Links">Links</a>
-			<a class="active" href="#Why F+C">Why F+C?</a>
+			<a class="active" href="#Why F+C">Motivations</a>
 			<a class="active" href="#About">About Me</a>
 		</div>
 		<a href="https://twitter.com/SarSag6">
@@ -202,12 +202,12 @@
 
  <img id="About" src="https://raw.githubusercontent.com/sarsag/Founders/master/About%20pic.jpg" alt="My beautiful face">
 
-<div class="introduction">
+<div class="Introduction">
   <p>Hi! My name is Saransh.<br> I am an aspiring web developer based in London.
   </p>
 
   <h1 id="Why F+C">
-    WHY FOUNDERS AND CODERS?
+    MY MOTIVATIONS FOR FAC
   </h1>
 
   <p1>
@@ -244,19 +244,17 @@
 
   <div class="slider-container">
     <a class="previous-button" onclick="previous()">&#10094;</a>
-    <img id="slider" src="https://s.yimg.com/uu/api/res/1.2/DdytqdFTgtQuxVrHLDdmjQ--~B/aD03MTY7dz0xMDgwO3NtPTE7YXBwaWQ9eXRhY2h5b24-/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2019-11/7b5b5330-112b-11ea-a77f-7c019be7ecae" alt="first pic">
+    <img id="slider" src="https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_183357-01-min.jpg?raw=true" alt="slideshow">
 
     </img>
-    <a class="next-button" onclick="next()">&#10095;</a>
-    <!-- <a class="pause-play-button" onclick="pausePlay()">Pause</a> -->
-    
+    <a class="next-button" onclick="next()">&#10095;</a> 
   </div>
   <a class="pause-play-button" onclick="pausePlay()">&#10074; &#10074;</a>
 </div>
 
 <script>
 
-let imagArr = ["https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", "https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg"]
+let imagArr = ["https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_165051-01-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_183357-01-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190514_134111-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190517_184744-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190623_202702-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190823_170316-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190829_144041-min.jpg?raw=true"]
 let num = 0;
 let interval;
 let buttonIsPause = true;
@@ -282,7 +280,7 @@ function previous() {
 function setSlideshowInterval(){
   interval = setInterval(function() {
     next();
-    }, 500);
+    }, 2000);
 }
 
 window.onload = setSlideshowInterval();
@@ -318,9 +316,6 @@ document.onkeydown = function(e) {
         break;
   }
 }
-
-
-
 
 </script>
 </body>
