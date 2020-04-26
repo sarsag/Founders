@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
 <style>
 	body {
@@ -129,8 +129,10 @@
 
 	#slider {
 		position: relative;
-		width: 400px;
-		height: 300px;
+    width: 800px;
+    height: 600px;
+    //width: 80vmax;
+    //height: 60vmax;
     vertical-align: middle;
 	}
 
@@ -138,6 +140,7 @@
     max-width: 1000px;
     position: relative;
     margin: auto;
+    padding-bottom: 100px;
   }
 
   .skills {
@@ -145,39 +148,36 @@
     top: 150px;
   }
 
-    /* Next & previous buttons */
   .previous-button, .next-button {
-    cursor: pointer;
     position: relative;
     top: 50%;
     width: auto;
-    margin-top: -22px;
-    padding: 16px;
+    padding: 10px;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
+    border-radius: 10%;
   }
 
-  /* Position the "next button" to the right */
-  .next-button {
-    z-index: 99;
-    border-radius: 3px 0 0 3px;
+  /* .previous-button{
+    //position: relative;
+    left: 0;
+  } */
+
+  .pause-play-button {
+    position: relative;
+    top: -80px;
+    padding: 10px;
+    color: white;
+    user-select: none;
+    border-radius: 10%;
   }
 
-  .previous-button {
-    z-index: 99;
-    border-radius: 3px 0 0 3px;
+  .previous-button:hover, .next-button:hover, .pause-play-button:hover {
+    background-color: red;
   }
 
-  /* On hover, add a black background color with a little bit see-through */
-  .previous-button:hover, .next-button:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
-
-  
 </style>
 
 <body>
@@ -223,7 +223,6 @@
   <div class="linkpics">
 
     <a href="https://github.com/sarsag/Founders">
-    <a href="https://github.com/sarsag/Founders">
     <!--This has been written twice as for some reason the first a tag is not recognized unless I do it twice-->
     <img id="Github" class="logo"  src="https://raw.githubusercontent.com/sarsag/Founders/master/github.png" alt="Github logo">
     </a>
@@ -249,13 +248,15 @@
 
     </img>
     <a class="next-button" onclick="next()">&#10095;</a>
-    <!-- <button class="pause-play-button" onclick="pausePlay()">Pause</button> -->
+    <!-- <a class="pause-play-button" onclick="pausePlay()">Pause</a> -->
+    
   </div>
+  <a class="pause-play-button" onclick="pausePlay()">&#10074; &#10074;</a>
 </div>
 
 <script>
 
-let imagCarou = ["https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", "https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg"]
+let imagArr = ["https://images.unsplash.com/photo-1542044896530-05d85be9b11a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80", "https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg"]
 let num = 0;
 let interval;
 let buttonIsPause = true;
@@ -263,25 +264,25 @@ let buttonIsPause = true;
 function next() {
   let slider = document.getElementById("slider");
   num++;
-  if (num >= imagCarou.length) {
+  if (num >= imagArr.length) {
     num = 0
   }
-  slider.src = imagCarou[num];
+  slider.src = imagArr[num];
 }
 
 function previous() {
   let slider = document.getElementById("slider");
   num--;
   if (num < 0) {
-    num = imagCarou.length - 1;
+    num = imagArr.length - 1;
   }
-  slider.src = imagCarou[num];
+  slider.src = imagArr[num];
 }
 
 function setSlideshowInterval(){
   interval = setInterval(function() {
     next();
-    }, 5000);
+    }, 500);
 }
 
 window.onload = setSlideshowInterval();
@@ -289,11 +290,11 @@ window.onload = setSlideshowInterval();
 function pausePlay() {
   if (buttonIsPause){
     clearInterval(interval);
-    document.getElementsByClassName("pause-play-button")[0].innerHTML = "Play";
+    document.getElementsByClassName("pause-play-button")[0].innerHTML = "&#9658;";
     buttonIsPause = false;
   } else {
     setSlideshowInterval();
-    document.getElementsByClassName("pause-play-button")[0].innerHTML = "Pause";
+    document.getElementsByClassName("pause-play-button")[0].innerHTML = "&#10074; &#10074;";
     buttonIsPause = true;
   }
 }
