@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 
 <style>
 	body {
@@ -10,13 +10,18 @@
 
 	#About {
 		border-radius: 50%;
-		width: 300px;
+		width: 400px;
 		border: 5px solid red;
 		position: relative;
 		top: 130px;
 		max-width: 100%;
 		height: auto;
+    transition: all .2s ease-in-out;
 	}
+
+  #About:hover {
+    transform: scale(1.02);
+  }
 
 	.navbar {
 		background-color: black;
@@ -39,6 +44,7 @@
 		background-color: red;
 		border-radius: 4%;
 	}
+
 
 	#Twitter {
 		width: 40px;
@@ -131,9 +137,8 @@
 		position: relative;
     width: 800px;
     height: 600px;
-    //width: 80vmax;
-    //height: 60vmax;
     vertical-align: middle;
+
 	}
 
   .slider-container {
@@ -160,11 +165,6 @@
     border-radius: 10%;
   }
 
-  /* .previous-button{
-    //position: relative;
-    left: 0;
-  } */
-
   .pause-play-button {
     position: relative;
     top: -80px;
@@ -178,19 +178,37 @@
     background-color: red;
   }
 
+  .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  position: relative;
+  top: -60px;
+}
+
+.active, .dot:hover {
+  background-color: red;
+}
+
 </style>
 
 <body>
 
 	<head>
+    <title>Saransh's FAC Application Website</title>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 	</head>
 	<div class="navbar">
 		<div class="right">
-			<a class="active" href="#Gallery">Gallery</a>
-			<a class="active" href="#Links">Links</a>
-			<a class="active" href="#Why F+C">Motivations</a>
-			<a class="active" href="#About">About Me</a>
+			<a href="#Gallery">Gallery</a>
+			<a href="#Links">Links</a>
+			<a href="#Motivations">Motivations</a>
+			<a href="#About">About Me</a>
 		</div>
 		<a href="https://twitter.com/SarSag6">
 			<img id="Twitter"  src="https://raw.githubusercontent.com/sarsag/Founders/master/twitter.png" alt="Twitter logo">
@@ -206,7 +224,7 @@
   <p>Hi! My name is Saransh.<br> I am an aspiring web developer based in London.
   </p>
 
-  <h1 id="Why F+C">
+  <h1 id="Motivations">
     MY MOTIVATIONS FOR FAC
   </h1>
 
@@ -223,17 +241,16 @@
   <div class="linkpics">
 
     <a href="https://github.com/sarsag/Founders">
-    <!--This has been written twice as for some reason the first a tag is not recognized unless I do it twice-->
-    <img id="Github" class="logo"  src="https://raw.githubusercontent.com/sarsag/Founders/master/github.png" alt="Github logo">
+    <img id="Github" class="logo"  src="https://raw.githubusercontent.com/sarsag/Founders/master/github.png" alt="Github logo" title="A link to my Github page"> 
     </a>
 
     <a href="https://www.freecodecamp.org/sarsag">
-    <img id="FCC" class="logo" src="https://raw.githubusercontent.com/sarsag/Founders/master/fcc.png" alt="FreeCodeCamp logo">
+    <img id="FCC" class="logo" src="https://raw.githubusercontent.com/sarsag/Founders/master/fcc.png" alt="FreeCodeCamp logo" title="A link to my FreeCodeCamp page">
     </a>
 
     <a href="https://www.codewars.com/users/sarsag">
     
-    <img id="Codewars" class="logo" src="https://raw.githubusercontent.com/sarsag/Founders/master/codewars.jpg" alt="Codewars logo">
+    <img id="Codewars" class="logo" src="https://raw.githubusercontent.com/sarsag/Founders/master/codewars.jpg" alt="Codewars logo" title="A link to my Codewars page">
     </a>
 
   </div>
@@ -244,20 +261,46 @@
 
   <div class="slider-container">
     <a class="previous-button" onclick="previous()">&#10094;</a>
-    <img id="slider" src="https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_183357-01-min.jpg?raw=true" alt="slideshow">
+    <img id="slider" src="https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_183357-01-min.jpg?raw=true" alt="slideshow" title=""Hildenborough, March 2019"">
 
     </img>
     <a class="next-button" onclick="next()">&#10095;</a> 
   </div>
   <a class="pause-play-button" onclick="pausePlay()">&#10074; &#10074;</a>
+  <div style="text-align:center">
+    <span class="dot active" onclick="selectDot(0, imagTitle[0])"></span>
+    <span class="dot" onclick="selectDot(1, imagTitle[1])"></span>
+    <span class="dot" onclick="selectDot(2, imagTitle[2])"></span>
+    <span class="dot" onclick="selectDot(3, imagTitle[3])"></span>
+    <span class="dot" onclick="selectDot(4, imagTitle[4])"></span>
+    <span class="dot" onclick="selectDot(5, imagTitle[5])"></span>
+    <span class="dot" onclick="selectDot(6, imagTitle[6])"></span>
+    
+  </div>
 </div>
 
 <script>
 
 let imagArr = ["https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_165051-01-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190324_183357-01-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190514_134111-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190517_184744-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190623_202702-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190823_170316-min.jpg?raw=true", "https://github.com/sarsag/Founders/blob/master/Compressed%20and%20resized/20190829_144041-min.jpg?raw=true"]
+
+let imagTitle = [ "Richmond Park, September 2019", "Hildenborough, March 2019", "Hildenborough, March 2019", "God's Own Junkyard, May 2019", "Busaba Eatthai, May 2019", "Kent, June 2019", "Barkingside, August 2019"]
+
 let num = 0;
 let interval;
 let buttonIsPause = true;
+let slideIndex = 0;
+var dots = document.getElementsByClassName("dot")
+var slider = document.getElementById("slider")
+
+function selectDot(index, sliderTitle){
+  for (i=0; i<dots.length; i++){
+     dots[i].classList.remove("active");
+  }
+  dots[index].classList.add("active");
+  slider.title = sliderTitle;
+  slider.src = imagArr[index];
+  slideIndex = index;
+}
 
 function next() {
   let slider = document.getElementById("slider");
@@ -266,6 +309,11 @@ function next() {
     num = 0
   }
   slider.src = imagArr[num];
+  slider.title = imagTitle[num];
+  slideIndex++;
+  slideIndex = ((slideIndex%7)+7)%7;
+  dots[slideIndex].classList.add("active");
+  dots[((slideIndex-1%7)+7)%7].classList.remove("active");
 }
 
 function previous() {
@@ -275,18 +323,23 @@ function previous() {
     num = imagArr.length - 1;
   }
   slider.src = imagArr[num];
+  slider.title = imagTitle[num];
+  slideIndex--;
+  slideIndex = ((slideIndex%7)+7)%7;
+  dots[slideIndex].classList.add("active");
+  dots[((slideIndex+1%7)+7)%7].classList.remove("active");
 }
 
 function setSlideshowInterval(){
   interval = setInterval(function() {
     next();
-    }, 2000);
+    }, 1000);
 }
 
 window.onload = setSlideshowInterval();
 
 function pausePlay() {
-  if (buttonIsPause){
+  if (buttonIsPause) {
     clearInterval(interval);
     document.getElementsByClassName("pause-play-button")[0].innerHTML = "&#9658;";
     buttonIsPause = false;
@@ -296,6 +349,7 @@ function pausePlay() {
     buttonIsPause = true;
   }
 }
+
 
 document.onkeydown = function(e) {
   switch (e.keyCode) {
