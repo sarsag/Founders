@@ -1,0 +1,316 @@
+body {
+    text-align: center;
+    background: black;
+    color: #d9d9d9;
+    font-family: 'Open Sans', sans-serif;
+font-weight: 500;
+}
+
+#About {
+    border-radius: 50%;
+    width: 400px;
+    border: 5px solid red;
+    position: relative;
+    top: 130px;
+    max-width: 85%;
+    height: auto;
+transition: all .2s ease-in-out;
+}
+
+#About:hover {
+transform: scale(1.02);
+}
+
+.navbar {
+    background-color: black;
+    overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+    margin: 0 100px;
+}
+
+.left a {
+    float: left;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+.left .icon {
+display: none;
+border-radius: 100%;
+} 
+
+.left a:hover {
+    color: white;
+    background-color: red;
+    border-radius: 4%;
+}
+
+
+#Twitter {
+    width: 40px;
+    height: 40px;
+    float: right;
+    margin: 6px 7px;
+    border-radius: 20%;
+    filter: grayscale(80%);
+}
+
+#Twitter:hover {
+    filter: grayscale(0);
+}
+
+#email {
+    width: 40px;
+    height: 35px;
+    float: right;
+    margin: 7px;
+    border-radius: 20%;
+    filter: grayscale(80%)
+}
+
+#email:hover {
+    filter: grayscale(0);
+}
+
+p {
+    font-size: 32px;
+font-weight: 450;
+    padding: 10px;
+    position: relative;
+}
+
+h1 {
+    font-size: 60px;
+    padding: 10px;
+    position: relative;
+    color: gray;
+}
+
+p1 {
+display: block;
+    font-size: 24px;
+font-weight: 450;
+    padding: 10px;
+    position: relative;
+    color: #d9d9d9;
+    margin: 0 300px;
+text-align: center;
+}
+
+span.highlight1 {
+color:#ff5c33;
+}
+
+span.highlight2 {
+color:#ffff4d;
+}
+
+span.highlight3 {
+color:#33ffad;
+}
+
+span.highlight4 {
+color:#33ccff;
+}
+
+span.highlight5 {
+color:#9966ff;
+}
+
+.Introduction {
+top: 150px;
+position: relative;
+}
+
+#Github {
+    border-radius: 7%;
+    filter: invert(100%)
+}
+
+#Github:hover {
+    filter: grayscale(0);
+}
+
+#FCC {
+    border-radius: 7%;
+    filter: grayscale(80%)
+}
+
+#FCC:hover {
+    filter: grayscale(0);
+}
+
+#Codewars {
+    border-radius: 7%;
+    filter: grayscale(80%)
+}
+
+#Codewars:hover {
+    filter: grayscale(0);
+}
+
+.logo {
+height: 80px;
+    width: 250px;
+position: relative;
+padding: 0 10px;
+
+}
+
+#slider {
+    position: relative;
+width: 800px;
+height: 600px;
+vertical-align: middle;
+border-radius: 3%;
+opacity: 1;
+}
+
+
+.slider-container {
+max-width: 1000px;
+position: relative;
+margin: auto;
+padding-bottom: 100px;
+}
+
+.skills {
+position: relative;
+top: 150px;
+}
+
+.previous-button, .next-button {
+position: relative;
+top: 50%;
+width: auto;
+padding: 10px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+user-select: none;
+border-radius: 10%;
+}
+
+.pause-play-button {
+position: relative;
+top: -80px;
+padding: 10px;
+color: white;
+user-select: none;
+border-radius: 10%;
+}
+
+.previous-button:hover, .next-button:hover, .pause-play-button:hover {
+background-color: red;
+}
+
+.dot {
+cursor: pointer;
+height: 10px;
+width: 10px;
+margin: 0 2px;
+background-color: black;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+position: relative;
+top: -60px;
+border: 1px solid #d9d9d9;
+}
+
+.active, .dot:hover {
+background-color: red;
+height: 12px;
+width: 12px;
+border: 0;
+}
+
+hr {
+margin: 30px 0;
+border-color: gray;
+}
+
+h1 {
+font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+}
+
+@media only screen and (max-width:1500px) {
+p1 {
+margin: 0 200px;
+}
+}
+
+@media only screen and (max-width:1200px) {
+p1 {
+margin: 0 100px;
+}
+
+#slider {
+max-width: 80%;
+height: auto;
+}
+}
+
+@media only screen and (max-width:1000px) {
+
+.navbar {
+margin: 0 10px;
+}
+
+}
+
+@media only screen and (max-width:600px) {
+p1 {
+margin: 0 5px;
+text-align: center;
+}
+
+#slider {
+max-width: 80%;
+height: auto;
+}
+
+.logo {
+padding: 0 0;
+margin: 10px 10px;
+}
+
+h1 {
+text-align: block;
+font-size: 12vw;
+text-decoration: bold;
+}
+
+p {
+font-size: 8vw;
+}
+
+.left a {display: none;}
+.left a.icon {
+float: left;
+display: block;
+border-radius: 100%;
+font-weight: bold;
+}
+
+.left.responsive {position: relative;}
+.left.responsive .icon {
+position: absolute;
+left: 0;
+top: 0;
+border-radius: 100%;
+font-weight: bold;
+}
+
+.left.responsive a {
+float: none;
+display: block;
+text-align: right;
+}
+
+}
