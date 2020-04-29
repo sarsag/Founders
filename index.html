@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 	body {
 		text-align: center;
 		background: black;
-		color: white;
+		color: #d9d9d9;
 		font-family: 'Roboto Slab', serif;
 	}
 
@@ -14,7 +16,7 @@
 		border: 5px solid red;
 		position: relative;
 		top: 130px;
-		max-width: 100%;
+		max-width: 85%;
 		height: auto;
     transition: all .2s ease-in-out;
 	}
@@ -30,8 +32,8 @@
 		margin: 0 100px;
 	}
 
-	.right a {
-		float: right;
+	.left a {
+		float: left;
 		color: white;
 		text-align: center;
 		text-decoration: none;
@@ -39,7 +41,12 @@
 		font-size: 17px;
 	}
 
-	.right a:hover {
+  .left .icon {
+  display: none;
+  border-radius: 100%;
+  } 
+
+	.left a:hover {
 		color: white;
 		background-color: red;
 		border-radius: 4%;
@@ -49,7 +56,7 @@
 	#Twitter {
 		width: 40px;
 		height: 40px;
-		float: left;
+		float: right;
 		margin: 6px 7px;
 		border-radius: 20%;
 		filter: grayscale(80%);
@@ -62,7 +69,7 @@
 	#email {
 		width: 40px;
 		height: 35px;
-		float: left;
+		float: right;
 		margin: 7px;
 		border-radius: 20%;
 		filter: grayscale(80%)
@@ -79,7 +86,7 @@
 	}
 
 	h1 {
-		font-size: 45px;
+		font-size: 60px;
 		padding: 10px;
 		position: relative;
 		color: gray;
@@ -87,13 +94,34 @@
 
 	p1 {
     display: block;
-		font-size: 20px;
+		font-size: 24px;
 		padding: 10px;
 		position: relative;
-		color: white;
-		margin: 0 100px;
+		color: #d9d9d9;
+		margin: 0 300px;
+    text-align: center;
 	}
+
+  span.highlight1 {
+    color:#ff5c33;
+  }
   
+  span.highlight2 {
+    color:#ffff4d;
+  }
+
+  span.highlight3 {
+    color:#33ffad;
+  }
+
+  span.highlight4 {
+    color:#33ccff;
+  }
+
+  span.highlight5 {
+    color:#9966ff;
+  }
+
   .Introduction {
     top: 150px;
     position: relative;
@@ -126,11 +154,12 @@
 		filter: grayscale(0);
 	}
 
-  .logo{
+  .logo {
     height: 80px;
 		width: 250px;
     position: relative;
     padding: 0 10px;
+    
   }
 
 	#slider {
@@ -138,8 +167,10 @@
     width: 800px;
     height: 600px;
     vertical-align: middle;
+    border-radius: 3%;
+    opacity: 1;
+}
 
-	}
 
   .slider-container {
     max-width: 1000px;
@@ -180,19 +211,102 @@
 
   .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: black;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
   position: relative;
   top: -60px;
+  border: 1px solid #d9d9d9;
 }
 
 .active, .dot:hover {
   background-color: red;
+  height: 12px;
+  width: 12px;
+  border: 0;
+}
+
+hr {
+  margin: 30px 0;
+  border-color: gray;
+}
+
+@media only screen and (max-width:1500px) {
+  p1 {
+    margin: 0 200px;
+  }
+}
+
+@media only screen and (max-width:1200px) {
+  p1 {
+    margin: 0 100px;
+  }
+
+  #slider {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width:1000px) {
+
+  .navbar {
+    margin: 0 10px;
+  }
+
+}
+
+@media only screen and (max-width:600px) {
+  p1 {
+    margin: 0 5px;
+    text-align: center;
+  }
+
+  #slider {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .logo {
+    padding: 0 0;
+    margin: 10px 10px;
+  }
+
+  h1 {
+    text-align: block;
+    font-size: 12vw;
+    text-decoration: bold;
+  }
+
+  p {
+    font-size: 8vw;
+  }
+
+  .left a {display: none;}
+  .left a.icon {
+    float: left;
+    display: block;
+    border-radius: 100%;
+  }
+
+  .left.responsive {position: relative;}
+  .left.responsive .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 100%;
+  }
+
+  .left.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+
 }
 
 </style>
@@ -204,11 +318,14 @@
 		<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
 	</head>
 	<div class="navbar">
-		<div class="right">
-			<a href="#Gallery">Gallery</a>
-			<a href="#Links">Links</a>
-			<a href="#Motivations">Motivations</a>
-			<a href="#About">About Me</a>
+		<div class="left" id="resnavbar">
+      <a href="#About">About Me</a>
+      <a href="#Motivations">Motivations</a>
+      <a href="#Links">Links</a>
+      <a href="#Gallery">Gallery</a>
+      <a href="javascript:void(0);" class="icon" onclick="resnav()">
+        <i>&#9776;</i>
+      </a>
 		</div>
 		<a href="https://twitter.com/SarSag6">
 			<img id="Twitter"  src="https://raw.githubusercontent.com/sarsag/Founders/master/twitter.png" alt="Twitter logo">
@@ -228,9 +345,22 @@
     MY MOTIVATIONS FOR FAC
   </h1>
 
-  <p1>
-    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.
-  </p1>
+<p1>
+I have a <span class="highlight1">real passion and love for technology</span>, as well as a <span class="highlight1">drive to improve society</span>. The whole ethos behind FAC is one to better the world, and the <span class="highlight">Tech for Better</span> programme is super exciting for me, being one of the things I’m looking forward to most on the course. 
+<br>
+<hr>
+I think FAC will provide me with a <span class="highlight2">unique, collaborative environment to start my journey in tech</span>. I’ll enjoy learning with like-minded people interested in technology, who are also eager to learn and make a difference.
+<br>
+<hr>
+I believe <span class="highlight3">pair programming is one of the best ways to learn</span>, sharing knowledge with other people and reiterating your own learning is a very effective mode of learning for me. It’s what I have found to work for me during university and work, and I know it will work for me during the course. 
+<br>
+<hr>
+I love the mentoring aspect of the course. The <span class="highlight4">community at FAC</span> has been <span class="highlight4">super helpful</span>, and I would love to <span class="highlight4">give back</span> and <span class="highlight4">reinforce my learning through mentoring</span>. The Tuesday sessions have been outstanding for my learning, and I look forward to mentoring and learning simultaneously.
+<br>
+<hr>
+The curriculum of the course is also super enticing for me, I think it will provide me with a <span class="highlight5">wide range of insight and expertise</span> ranging from Node and React to Databases and REST API’s, ultimately allowing me to become a <span class="highlight5">well-rounded web developer</span>. 
+
+</p1>
 </div>
 
 <div class="skills">
@@ -303,7 +433,7 @@ function selectDot(index, sliderTitle){
 }
 
 function next() {
-  let slider = document.getElementById("slider");
+  let slider = document.getElementById("slider")
   num++;
   if (num >= imagArr.length) {
     num = 0
@@ -333,7 +463,7 @@ function previous() {
 function setSlideshowInterval(){
   interval = setInterval(function() {
     next();
-    }, 1000);
+    }, 3000);
 }
 
 window.onload = setSlideshowInterval();
@@ -368,6 +498,15 @@ document.onkeydown = function(e) {
         e.preventDefault();
         pausePlay();
         break;
+  }
+}
+
+function resnav() {
+  var x = document.getElementById("resnavbar");
+  if (x.className === "left") {
+    x.className += " responsive";
+  } else {
+    x.className = "left";
   }
 }
 
