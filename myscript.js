@@ -91,9 +91,13 @@ document.onkeydown = function(e) {
 
 function resnav() {
   var x = document.getElementById("resnavbar");
+  var element = document.getElementById("contact");
   if (x.className === "left") {
     x.className += " responsive";
+    element.style.display = "none";
   } else {
     x.className = "left";
+    element.style.display = "block";
+  
   }
 }
